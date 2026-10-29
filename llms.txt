@@ -1,0 +1,86 @@
+# Pakistan Bill Calculator
+
+> Independent, free estimator for electricity, gas and water bills in Pakistan. NOT an official company website. Results are estimates only.
+
+## How to use
+- Choose a company page, enter units (kWh for electricity, HM3 for gas), choose category and protected status where applicable, and press Calculate.
+- All rates live in /data/tariffs.json. Rates marked VERIFY_RATE are NOT yet confirmed from an official source, and the calculator deliberately shows no total for those companies until the rates are filled in.
+- A custom-rate mode lets a user estimate from a rate on their own bill, clearly labelled as user-entered, not official.
+
+## Companies covered
+- Electricity: LESCO, FESCO, GEPCO, IESCO, MEPCO, PESCO, HESCO, SEPCO, QESCO, TESCO, K-Electric, Solar Net Metering
+- Gas: SNGPL, SSGC
+- Water: WASA Lahore, KWSC Karachi
+- Cities: Lahore, Faisalabad, Gujranwala, Sialkot, Islamabad, Rawalpindi, Multan, Peshawar, Hyderabad, Sukkur, Quetta, Karachi, Bahawalpur (each with its own calculator page)
+- Blog: 22 guides on electricity bill, gas bill, water bill, slabs, FPA, GST, HM3, solar and duplicate bills
+- Search: /search/ — search by city or company
+- Phase 2: PTCL / internet calculators (planned, not yet built)
+
+## Pages
+- [https://pakistan-bill-calculator.vercel.app/](https://pakistan-bill-calculator.vercel.app/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/gas-bill-calculator/](https://pakistan-bill-calculator.vercel.app/gas-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/water-bill-calculator/](https://pakistan-bill-calculator.vercel.app/water-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/lesco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/lesco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/fesco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/fesco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/gepco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/gepco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/iesco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/iesco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/mepco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/mepco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/pesco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/pesco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/hesco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/hesco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/sepco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/sepco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/qesco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/qesco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/tesco-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/tesco-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/k-electric-bill-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/k-electric-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/solar-net-metering-calculator/](https://pakistan-bill-calculator.vercel.app/electricity-bill-calculator/solar-net-metering-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/gas-bill-calculator/sngpl-gas-bill-calculator/](https://pakistan-bill-calculator.vercel.app/gas-bill-calculator/sngpl-gas-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/gas-bill-calculator/ssgc-gas-bill-calculator/](https://pakistan-bill-calculator.vercel.app/gas-bill-calculator/ssgc-gas-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/water-bill-calculator/wasa-lahore-bill-calculator/](https://pakistan-bill-calculator.vercel.app/water-bill-calculator/wasa-lahore-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/water-bill-calculator/kwsc-water-bill-calculator/](https://pakistan-bill-calculator.vercel.app/water-bill-calculator/kwsc-water-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/lahore-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/lahore-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/faisalabad-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/faisalabad-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/gujranwala-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/gujranwala-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/sialkot-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/sialkot-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/islamabad-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/islamabad-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/rawalpindi-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/rawalpindi-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/multan-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/multan-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/peshawar-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/peshawar-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/hyderabad-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/hyderabad-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/sukkur-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/sukkur-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/quetta-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/quetta-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/karachi-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/karachi-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/cities/bahawalpur-electricity-bill-calculator/](https://pakistan-bill-calculator.vercel.app/cities/bahawalpur-electricity-bill-calculator/)
+- [https://pakistan-bill-calculator.vercel.app/search/](https://pakistan-bill-calculator.vercel.app/search/)
+- [https://pakistan-bill-calculator.vercel.app/blog/](https://pakistan-bill-calculator.vercel.app/blog/)
+- [https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-electricity-bill-pakistan/](https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-electricity-bill-pakistan/)
+- [https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-electricity-bill-by-units/](https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-electricity-bill-by-units/)
+- [https://pakistan-bill-calculator.vercel.app/blog/electricity-bill-from-meter-reading/](https://pakistan-bill-calculator.vercel.app/blog/electricity-bill-from-meter-reading/)
+- [https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-fpa-electricity-bill/](https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-fpa-electricity-bill/)
+- [https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-gst-electricity-bill/](https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-gst-electricity-bill/)
+- [https://pakistan-bill-calculator.vercel.app/blog/electricity-duty-income-tax-bill/](https://pakistan-bill-calculator.vercel.app/blog/electricity-duty-income-tax-bill/)
+- [https://pakistan-bill-calculator.vercel.app/blog/protected-vs-non-protected-consumers/](https://pakistan-bill-calculator.vercel.app/blog/protected-vs-non-protected-consumers/)
+- [https://pakistan-bill-calculator.vercel.app/blog/domestic-commercial-industrial-bill-difference/](https://pakistan-bill-calculator.vercel.app/blog/domestic-commercial-industrial-bill-difference/)
+- [https://pakistan-bill-calculator.vercel.app/blog/how-to-check-lesco-bill-online-duplicate/](https://pakistan-bill-calculator.vercel.app/blog/how-to-check-lesco-bill-online-duplicate/)
+- [https://pakistan-bill-calculator.vercel.app/blog/sngpl-gas-bill-calculation-hm3-mmbtu/](https://pakistan-bill-calculator.vercel.app/blog/sngpl-gas-bill-calculation-hm3-mmbtu/)
+- [https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-gas-bill-pakistan/](https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-gas-bill-pakistan/)
+- [https://pakistan-bill-calculator.vercel.app/blog/ssgc-gas-bill-guide-karachi/](https://pakistan-bill-calculator.vercel.app/blog/ssgc-gas-bill-guide-karachi/)
+- [https://pakistan-bill-calculator.vercel.app/blog/solar-net-metering-bill-guide/](https://pakistan-bill-calculator.vercel.app/blog/solar-net-metering-bill-guide/)
+- [https://pakistan-bill-calculator.vercel.app/blog/ac-bill-inverter-ac-bill/](https://pakistan-bill-calculator.vercel.app/blog/ac-bill-inverter-ac-bill/)
+- [https://pakistan-bill-calculator.vercel.app/blog/sub-meter-electricity-bill/](https://pakistan-bill-calculator.vercel.app/blog/sub-meter-electricity-bill/)
+- [https://pakistan-bill-calculator.vercel.app/blog/calculate-electricity-bill-excel/](https://pakistan-bill-calculator.vercel.app/blog/calculate-electricity-bill-excel/)
+- [https://pakistan-bill-calculator.vercel.app/blog/watts-to-units-kwh-guide/](https://pakistan-bill-calculator.vercel.app/blog/watts-to-units-kwh-guide/)
+- [https://pakistan-bill-calculator.vercel.app/blog/water-bill-wasa-kwsc-guide/](https://pakistan-bill-calculator.vercel.app/blog/water-bill-wasa-kwsc-guide/)
+- [https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-bill-from-watts/](https://pakistan-bill-calculator.vercel.app/blog/how-to-calculate-bill-from-watts/)
+- [https://pakistan-bill-calculator.vercel.app/blog/electricity-bill-slab-rates-explained/](https://pakistan-bill-calculator.vercel.app/blog/electricity-bill-slab-rates-explained/)
+- [https://pakistan-bill-calculator.vercel.app/blog/why-electricity-bill-high-summer/](https://pakistan-bill-calculator.vercel.app/blog/why-electricity-bill-high-summer/)
+- [https://pakistan-bill-calculator.vercel.app/blog/duplicate-bill-download-guide-pakistan/](https://pakistan-bill-calculator.vercel.app/blog/duplicate-bill-download-guide-pakistan/)
+- [https://pakistan-bill-calculator.vercel.app/about/](https://pakistan-bill-calculator.vercel.app/about/)
+- [https://pakistan-bill-calculator.vercel.app/contact/](https://pakistan-bill-calculator.vercel.app/contact/)
+- [https://pakistan-bill-calculator.vercel.app/privacy-policy/](https://pakistan-bill-calculator.vercel.app/privacy-policy/)
+- [https://pakistan-bill-calculator.vercel.app/terms/](https://pakistan-bill-calculator.vercel.app/terms/)
+- [https://pakistan-bill-calculator.vercel.app/disclaimer/](https://pakistan-bill-calculator.vercel.app/disclaimer/)
+- [https://pakistan-bill-calculator.vercel.app/methodology/](https://pakistan-bill-calculator.vercel.app/methodology/)
+- [https://pakistan-bill-calculator.vercel.app/tariff-update-log/](https://pakistan-bill-calculator.vercel.app/tariff-update-log/)
+
+## Sources to verify before launch
+- NEPRA tariff determinations, OGRA tariff notifications, and each company's official tariff schedule and bill-check portal (see /tariff-update-log/).

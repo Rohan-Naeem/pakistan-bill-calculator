@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology | Pakistan Bill Calculator</title>
+<meta name="description" content="Methodology: How We Calculate Bills — Pakistan Bill Calculator, an independent bill estimator for Pakistan.">
+<link rel="canonical" href="https://pakistan-bill-calculator.vercel.app/methodology/">
+<meta property="og:title" content="Methodology | Pakistan Bill Calculator">
+<meta property="og:description" content="Methodology: How We Calculate Bills — Pakistan Bill Calculator, an independent bill estimator for Pakistan.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pakistan-bill-calculator.vercel.app/methodology/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Methodology | Pakistan Bill Calculator">
+<meta name="twitter:description" content="Methodology: How We Calculate Bills — Pakistan Bill Calculator, an independent bill estimator for Pakistan.">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="/">Pakistan Bill Calculator</a><nav><a href="/electricity-bill-calculator/">Electricity</a><a href="/gas-bill-calculator/">Gas</a><a href="/water-bill-calculator/">Water</a><a href="/search/">Search</a><a href="/blog/">Blog</a></nav></div></header>
+<main><div class="wrap">
+<p class="bread"><a href="/">Home</a> › Methodology: How We Calculate Bills</p><h1>Methodology: How We Calculate Bills</h1><p><strong>Step 1 — Units.</strong> The user enters units consumed (kWh for electricity, HM3 for gas). Units are validated: numbers only, no negatives, with a realistic maximum.</p><p><strong>Step 2 — Slabs.</strong> Units are allocated to tariff slabs in order, from the lowest slab upward. Only units inside a slab are charged at that slab's rate. The slab structure for each company and category lives in <code>/data/tariffs.json</code>, not in the JavaScript, so a rate change does not require a code change.</p><p><strong>Step 3 — Fixed charges.</strong> The category fixed charge is added. For gas and water, the relevant fixed or category charge is used instead of a per-unit slab where the tariff says so.</p><p><strong>Step 4 — Adjustments.</strong> Fuel Price Adjustment and quarterly adjustment (electricity) are added per unit where the official tariff provides them.</p><p><strong>Step 5 — Taxes and fees.</strong> Electricity duty, GST, TV fee and other official charges are added line by line, on the base the official tariff specifies. Income tax / further tax rules are noted, not guessed, where they depend on bill history.</p><p><strong>Step 6 — Solar.</strong> Imported units are charged under the slab structure; exported units are credited only at the official export rate in the approved net-metering terms. Import and export are never merged into a single figure before calculation.</p><p><strong>Verification rule.</strong> Any rate not yet confirmed from an official source stays as VERIFY_RATE and produces no total. A custom-rate mode exists so a user can estimate from a rate on their own bill, clearly labelled as user-entered, not official.</p><p><strong>Worked method in words.</strong> How to calculate an electricity bill from a meter reading: present reading minus previous reading equals units. How to calculate an electricity bill by units: split those units across slabs in order, multiply each block by its slab rate, and add the blocks. How to calculate an electricity bill from watts: watts × hours ÷ 1,000 = kWh, then use the kWh method above. How to calculate a gas bill from a meter reading: present HM3 reading minus previous HM3 reading equals HM3 used, then split across gas slabs. How to calculate a bill in Excel: build a slab table, allocate units to each slab row, multiply and add, then add fixed charges and taxes as separate rows — never multiply all units by the top slab rate.</p><p><strong>Keyword note.</strong> Many searches for the same calculation use different words — "bill calculator", "online bill calculator", "calculate electricity bill online", "how electricity bill is calculated in Pakistan" and so on. This site targets the calculation itself, not every word-order variant, because those variants share the same intent and the same method. Reversed or misspelled variants are not listed as separate pages, and irrelevant variants (other countries, other kinds of "bill") are not targeted at all.</p>
+</div></main>
+<footer><div class="wrap">
+<p><strong>Pakistan Bill Calculator</strong> is an independent estimator. It is <strong>not</strong> an official website of LESCO, FESCO, GEPCO, IESCO, MEPCO, PESCO, HESCO, SEPCO, QESCO, TESCO, K-Electric, SNGPL, SSGC, WASA or KWSC. Results are estimates only.</p>
+<p><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms/">Terms</a> · <a href="/disclaimer/">Disclaimer</a> · <a href="/methodology/">Methodology</a> · <a href="/tariff-update-log/">Tariff Update Log</a></p>
+<p class="small">Last updated: 2026-10-29. Tariff rates marked VERIFY_RATE must be filled from official sources before launch.</p>
+</div></footer>
+</body>
+</html>
