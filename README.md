@@ -8,7 +8,7 @@ Static HTML + CSS + vanilla JavaScript. No build step, no framework, no database
 - `CONTENT-CHECKLIST.md`, `KEYWORDS.md` — launch checklists.
 
 ## Tariff status (2026-11-01)
-Domestic electricity base rates for all DISCOs + K-Electric are filled from NEPRA S.R.O. 279(I)/2026 (IESCO Tariff Guide, checked 2026-11-01). Gas, water, solar and each month's FPA / quarterly adjustment remain `"VERIFY_RATE"` on purpose — do not invent them.
+Domestic electricity base rates for all DISCOs + K-Electric are filled from NEPRA S.R.O. 279(I)/2026 (IESCO Tariff Guide, checked 2026-11-01). Domestic gas base rates for SNGPL/SSGC are filled from the OGRA notification effective 1 July 2025 (checked 2026-11-01), with HM3 to MMBTU conversion at the bill's GCV. Water, solar, commercial/industrial gas and each month's FPA / quarterly adjustment remain `"VERIFY_RATE"` on purpose — do not invent them.
 No official number has been invented. Until you fill them, company calculators
 show the slab structure and **no total** — that is intentional.
 

@@ -30,11 +30,12 @@
 
 <section class="card" aria-label="Calculator">
 <h2>SNGPL calculator</h2>
-<div class="notice"><strong>Important:</strong> Official tariff rates for this company are currently marked <strong>VERIFY_RATE</strong> in <code>/data/tariffs.json</code>. Until they are filled from an official source, this page shows the slab structure but <strong>does not invent a total</strong>. You can still estimate using the optional “my own rate” field, taken from your own bill.</div>
+<div class="notice"><strong>Base rates verified (domestic):</strong> domestic gas rates are from the OGRA notification effective 1 July 2025 (protected 200–350, non-protected 500–4,200 Rs/MMBTU, fixed Rs 600 / Rs 1,500–3,000, meter rent Rs 40, GST 18%). Enter HM3 and your bill’s GCV — the calculator converts HM3 to MMBTU at MMBTU = HM3 × GCV ÷ 281.7385. Commercial and industrial gas rates are still pending.</div>
 <form id="calc-form" data-company="sngpl">
 <label for="f-units">Units consumed (HM3)</label>
 <input id="f-units" type="number" min="0" step="any" inputmode="decimal" required placeholder="e.g. 250">
 
+<label for="f-gcv">GCV from your bill (BTU/SCF) — for HM3 to MMBTU conversion (default 990 if your bill does not show it)</label><input id="f-gcv" type="number" min="0" step="any" inputmode="decimal" value="990" placeholder="e.g. 990">
 
 <label for="f-category">Consumer category</label>
 <select id="f-category"><option value="domestic">Domestic</option><option value="commercial">Commercial</option><option value="industrial">Industrial</option></select>
@@ -73,7 +74,7 @@
 <p>Protected status matters a great deal for gas. It is not a choice you make on the bill; it follows the tariff rules for domestic consumers. If you enter the wrong protected status here, the estimate will be wrong even if the HM3 figure is exact, so check the category printed on a recent bill first.</p>
 <p>SNGPL winter bills jump because geysers and heaters run far longer. A geyser timer, or simply switching it off when not needed, often saves more gas than any other single change in winter.</p></section>
 <section class="card"><h2>Current SNGPL tariff slabs</h2>
-<p>The table below is read live from <code>/data/tariffs.json</code>, so updating that one file updates this page. Until the official rates are filled in, every rate shows as VERIFY_RATE on purpose — that is a safety feature, not a bug. Never trust a site that shows a confident total while hiding where its rates came from.</p>
+<p>The table below is read live from <code>/data/tariffs.json</code>, so updating that one file updates this page. Domestic gas base rates here are from the OGRA notification effective 1 July 2025. Rates are per MMBTU, bands are in HM3, and HM3 is converted to MMBTU at your bill's GCV (MMBTU = HM3 × GCV ÷ 281.7385; at GCV 990, 1 HM3 ≈ 3.51 MMBTU). Slabs are telescopic. Fixed charge is Rs 600 protected, Rs 1,500 non-protected up to 1.5 HM3 and Rs 3,000 above, plus Rs 40 meter rent and 18% GST.</p>
 <div id="slab-table"><p class="mut">Loading tariff slabs… (serve this site over http(s) so tariffs.json can load.)</p></div>
 <p class="mut">Source: Sui Northern Gas Pipelines Limited tariff schedule via NEPRA / OGRA as applicable. Last updated: 2026-10-29. See the <a href="/tariff-update-log/">Tariff Update Log</a> for what changed and what is still pending.</p></section>
 <section class="card"><h2>How to check your SNGPL bill online</h2><ol><li>Find your consumer or customer number on any old SNGPL bill.</li><li>Open the official SNGPL bill portal.</li><li>Enter the number exactly as printed, with no spaces, and complete any captcha shown.</li><li>Check the consumption, billing period, due date and total on the bill that opens.</li></ol>
@@ -104,7 +105,7 @@
 <footer><div class="wrap">
 <p><strong>Pakistan Bill Calculator</strong> is an independent estimator. It is <strong>not</strong> an official website of LESCO, FESCO, GEPCO, IESCO, MEPCO, PESCO, HESCO, SEPCO, QESCO, TESCO, K-Electric, SNGPL, SSGC, WASA or KWSC. Results are estimates only.</p>
 <p><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms/">Terms</a> · <a href="/disclaimer/">Disclaimer</a> · <a href="/methodology/">Methodology</a> · <a href="/tariff-update-log/">Tariff Update Log</a></p>
-<p class="small">Last updated: 2026-10-29 (domestic electricity base rates: 2026-11-01). Rates still marked VERIFY_RATE — gas, water, solar and monthly FPA / quarterly adjustment — are not invented and show no total.</p>
+<p class="small">Last updated: 2026-10-29 (domestic electricity base rates: 2026-11-01). Rates still marked VERIFY_RATE — water, solar, commercial/industrial gas and monthly FPA / quarterly adjustment — are not invented and show no total.</p>
 </div></footer>
 </body>
 </html>

@@ -30,6 +30,7 @@
     }).join('');
     var fixedTxt = cat.slabs.map(function(s){ return isNum(s.fixed_per_kw) ? fmt(s.fixed_per_kw) + '/kW' : ''; }).filter(function(x){ return x; }).join(', ');
     if(!fixedTxt) fixedTxt = isNum(cat.fixed_charge) ? fmt(cat.fixed_charge) : '<strong>VERIFY_RATE</strong>';
+    if(isNum(cat.fixed_charge_above_1_5)) fixedTxt += ' (above 1.5 HM3: ' + fmt(cat.fixed_charge_above_1_5) + ')';
     var modeTxt = cat.slabs[0] && cat.slabs[0].mode === 'flat_band' ? 'Billing: all units at the rate of the band your total falls in.' : 'Billing: units split across slabs in order.';
     slabBox.innerHTML = '<h3>Current tariff slabs — ' + esc(cat.label) + '</h3><table><tr><th>Units</th><th>Rate</th></tr>' + rows + '</table>'
       + '<p class="mut">Fixed charge: ' + fixedTxt
@@ -74,6 +75,40 @@
         + '<h3>Slab structure (rates pending)</h3><table><tr><th>Units</th><th>Rate</th></tr>' + srows + '</table>'
         + '<p class="mut">Estimated bill label: <strong>Pending verification</strong>. The final bill always depends on the company’s official billing.</p>';
       bindActions(null); return;
+    }
+    // Gas verified path: HM3 -> MMBTU per slab band, telescopic.
+    if(TARIFF.type === 'gas'){
+      var gcvEl = document.getElementById('f-gcv');
+      var gcv = gcvEl ? parseFloat(gcvEl.value) : NaN;
+      if(isNaN(gcv) || gcv <= 0) gcv = 990;
+      var gPrev = 0, gRem = units;
+      cat.slabs.forEach(function(s){
+        if(gRem <= 0) return;
+        var upper = (s.to === null || s.to === undefined) ? Infinity : s.to;
+        var take = isFinite(upper) ? Math.min(gRem, upper - gPrev) : gRem;
+        if(isFinite(upper)) gPrev = upper;
+        if(take <= 0) return;
+        var mmbtu = take * gcv / 281.7385;
+        var gc = mmbtu * s.rate;
+        rows.push(['Slab ' + s.from + ' – ' + (isFinite(upper) ? upper : 'above') + ' HM3 (' + take.toFixed(2) + ' HM3 = ' + mmbtu.toFixed(2) + ' MMBTU at ' + fmt(s.rate) + ')', gc]);
+        total += gc;
+      });
+      var gFixed = cat.fixed_charge;
+      if(key === 'domestic_non_protected' && units > 1.5 && isNum(cat.fixed_charge_above_1_5)) gFixed = cat.fixed_charge_above_1_5;
+      if(isNum(gFixed)){ rows.push(['Fixed charge', gFixed]); total += gFixed; }
+      var chG = TARIFF.charges || {};
+      if(isNum(chG.meter_rent)){ rows.push(['Meter rent', chG.meter_rent]); total += chG.meter_rent; }
+      var gBefore = total;
+      if(isNum(chG.gst_percent)){ var gg = gBefore * chG.gst_percent / 100; rows.push(['GST (' + chG.gst_percent + '%)', gg]); total += gg; }
+      var gChart = rows.filter(function(r){ return r[0].indexOf('Slab') === 0; }).map(function(r){
+        var w = total > 0 ? Math.max(4, Math.round(r[1] / total * 100)) : 4;
+        return '<div class="bar-row"><span style="min-width:170px">' + esc(r[0]) + '</span><span class="bar" style="width:' + w + '%"></span><span>' + fmt(r[1]) + '</span></div>';
+      }).join('');
+      out.innerHTML = '<p class="total">Estimated bill: ' + fmt(total) + '</p>'
+        + '<table><tr><th>Item</th><th>Amount</th></tr>' + rows.map(function(r){ return '<tr><td>'+esc(r[0])+'</td><td>'+fmt(r[1])+'</td></tr>'; }).join('') + '</table>'
+        + '<h3>Where the money goes</h3>' + gChart
+        + '<p class="mut">Estimated bill only, from energy (HM3 at GCV ' + gcv + ' converted to MMBTU) + fixed charge + meter rent + GST 18%. Excludes arrears and other bill lines. The final bill depends on the company’s official billing and the GCV on your bill.</p>';
+      bindActions(total); return;
     }
     // Verified path. Two billing modes, both from the official schedule:
     // telescopic (protected domestic: split across slabs) and flat_band

@@ -1821,96 +1821,116 @@
       "type": "gas",
       "unit": "HM3",
       "region": "Punjab, KP, Islamabad, AJK and Gilgit-Baltistan",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "OGRA tariff notification and the company tariff schedule — verify the current notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "OGRA domestic sale-price notification effective 1 July 2025 (29 June 2025), as shown on SSGC Domestic Rates — checked 2026-11-01, still the newest domestic notice found. Same schedule for SNGPL and SSGC.",
       "source_url": "https://www.sngpl.com.pk",
-      "tariff_source_url": "",
+      "tariff_source_url": "https://www.ssgc.com.pk",
       "bill_check_url": "https://www.sngpl.com.pk",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (telescopic, Rs/MMBTU)",
           "slabs": [
             {
               "from": 0,
+              "to": 0.25,
+              "rate": 200,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
+            },
+            {
+              "from": 0.25,
               "to": 0.5,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "rate": 250,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
               "from": 0.5,
-              "to": 1,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "to": 0.6,
+              "rate": 300,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 1,
-              "to": 2,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 0.6,
+              "to": 0.9,
+              "rate": 350,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 2,
-              "to": 3,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
-            },
-            {
-              "from": 3,
-              "to": 4,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
-            },
-            {
-              "from": 4,
+              "from": 0.9,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "rate": 350,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 600
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (telescopic, Rs/MMBTU)",
           "slabs": [
             {
               "from": 0,
-              "to": 0.5,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "to": 0.25,
+              "rate": 500,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 0.5,
-              "to": 1,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 0.25,
+              "to": 0.6,
+              "rate": 850,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 1,
-              "to": 2,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 0.6,
+              "to": 1.0,
+              "rate": 1250,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 2,
-              "to": 3,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 1.0,
+              "to": 1.5,
+              "rate": 1450,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 3,
-              "to": 4,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 1.5,
+              "to": 2.0,
+              "rate": 1900,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 4,
+              "from": 2.0,
+              "to": 3.0,
+              "rate": 3300,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
+            },
+            {
+              "from": 3.0,
+              "to": 4.0,
+              "rate": 3800,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
+            },
+            {
+              "from": 4.0,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "rate": 4200,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1500,
+          "fixed_charge_above_1_5": 3000
         },
         "commercial": {
           "label": "Commercial",
@@ -1998,13 +2018,17 @@
         }
       },
       "charges": {
-        "gst_percent": "VERIFY_RATE",
-        "meter_rent": "VERIFY_RATE",
-        "fixed_charge_note": "Gas fixed charges differ by category and by protected / non-protected status."
+        "gst_percent": 18,
+        "meter_rent": 40,
+        "gcv_default": 990,
+        "fixed_charge_note": "Protected fixed Rs 600/month. Non-protected fixed Rs 1,500/month up to 1.5 HM3, Rs 3,000/month above 1.5 HM3. Meter rent Rs 40/month. GST 18% on energy + fixed + meter rent.",
+        "charges_note": "Total shown includes energy (HM3 converted to MMBTU at your GCV) + fixed charge + meter rent + GST 18%. It EXCLUDES arrears, adjustments and any other bill lines. If your bill's GCV differs from the default 990, enter it — the total moves with GCV."
       },
       "notes": [
-        "Gas slabs are in HM3. If your bill shows MMBTU, convert using the conversion factor printed on the bill, and note it on the page.",
-        "Many domestic gas consumers are billed bi-monthly. A two-month consumption figure must not be entered as a one-month figure."
+        "Protected = average winter (Nov-Feb) consumption 0.9 HM3/month or less. Everyone else is non-protected.",
+        "Conversion: MMBTU = HM3 x GCV / 281.7385, where GCV is in BTU/SCF as printed on your bill. At GCV 990, 1 HM3 = about 3.51 MMBTU. Enter your bill's GCV for the closest estimate; the default 990 is an approximation.",
+        "Gas slabs are telescopic: each HM3 band is charged at its own Rs/MMBTU rate, after conversion. The notified protected slabs stop at 0.9 HM3; above that this calculator continues at the top protected rate (Rs 350) and labels it — check your bill if you are protected and use more than 0.9 HM3 in a period.",
+        "Many domestic gas consumers are billed bi-monthly. Enter the full billing-period HM3 shown on the bill, not half of it, and read the result as a billing-period total."
       ]
     },
     "ssgc": {
@@ -2014,96 +2038,116 @@
       "type": "gas",
       "unit": "HM3",
       "region": "Sindh and Balochistan",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "OGRA tariff notification and the company tariff schedule — verify the current notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "OGRA domestic sale-price notification effective 1 July 2025 (29 June 2025), as shown on SSGC Domestic Rates — checked 2026-11-01, still the newest domestic notice found. Same schedule for SNGPL and SSGC.",
       "source_url": "https://www.ssgc.com.pk",
-      "tariff_source_url": "",
+      "tariff_source_url": "https://www.ssgc.com.pk",
       "bill_check_url": "https://viewbill.ssgc.com.pk",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (telescopic, Rs/MMBTU)",
           "slabs": [
             {
               "from": 0,
+              "to": 0.25,
+              "rate": 200,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
+            },
+            {
+              "from": 0.25,
               "to": 0.5,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "rate": 250,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
               "from": 0.5,
-              "to": 1,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "to": 0.6,
+              "rate": 300,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 1,
-              "to": 2,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 0.6,
+              "to": 0.9,
+              "rate": 350,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 2,
-              "to": 3,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
-            },
-            {
-              "from": 3,
-              "to": 4,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
-            },
-            {
-              "from": 4,
+              "from": 0.9,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "rate": 350,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 600
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (telescopic, Rs/MMBTU)",
           "slabs": [
             {
               "from": 0,
-              "to": 0.5,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "to": 0.25,
+              "rate": 500,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 0.5,
-              "to": 1,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 0.25,
+              "to": 0.6,
+              "rate": 850,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 1,
-              "to": 2,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 0.6,
+              "to": 1.0,
+              "rate": 1250,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 2,
-              "to": 3,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 1.0,
+              "to": 1.5,
+              "rate": 1450,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 3,
-              "to": 4,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "from": 1.5,
+              "to": 2.0,
+              "rate": 1900,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             },
             {
-              "from": 4,
+              "from": 2.0,
+              "to": 3.0,
+              "rate": 3300,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
+            },
+            {
+              "from": 3.0,
+              "to": 4.0,
+              "rate": 3800,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
+            },
+            {
+              "from": 4.0,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/HM3"
+              "rate": 4200,
+              "unit": "PKR/MMBTU",
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1500,
+          "fixed_charge_above_1_5": 3000
         },
         "commercial": {
           "label": "Commercial",
@@ -2191,13 +2235,17 @@
         }
       },
       "charges": {
-        "gst_percent": "VERIFY_RATE",
-        "meter_rent": "VERIFY_RATE",
-        "fixed_charge_note": "Gas fixed charges differ by category and by protected / non-protected status."
+        "gst_percent": 18,
+        "meter_rent": 40,
+        "gcv_default": 990,
+        "fixed_charge_note": "Protected fixed Rs 600/month. Non-protected fixed Rs 1,500/month up to 1.5 HM3, Rs 3,000/month above 1.5 HM3. Meter rent Rs 40/month. GST 18% on energy + fixed + meter rent.",
+        "charges_note": "Total shown includes energy (HM3 converted to MMBTU at your GCV) + fixed charge + meter rent + GST 18%. It EXCLUDES arrears, adjustments and any other bill lines. If your bill's GCV differs from the default 990, enter it — the total moves with GCV."
       },
       "notes": [
-        "Gas slabs are in HM3. If your bill shows MMBTU, convert using the conversion factor printed on the bill, and note it on the page.",
-        "Many domestic gas consumers are billed bi-monthly. A two-month consumption figure must not be entered as a one-month figure."
+        "Protected = average winter (Nov-Feb) consumption 0.9 HM3/month or less. Everyone else is non-protected.",
+        "Conversion: MMBTU = HM3 x GCV / 281.7385, where GCV is in BTU/SCF as printed on your bill. At GCV 990, 1 HM3 = about 3.51 MMBTU. Enter your bill's GCV for the closest estimate; the default 990 is an approximation.",
+        "Gas slabs are telescopic: each HM3 band is charged at its own Rs/MMBTU rate, after conversion. The notified protected slabs stop at 0.9 HM3; above that this calculator continues at the top protected rate (Rs 350) and labels it — check your bill if you are protected and use more than 0.9 HM3 in a period.",
+        "Many domestic gas consumers are billed bi-monthly. Enter the full billing-period HM3 shown on the bill, not half of it, and read the result as a billing-period total."
       ]
     },
     "wasa-lahore": {
