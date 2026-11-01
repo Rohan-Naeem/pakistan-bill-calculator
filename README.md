@@ -7,8 +7,8 @@ Static HTML + CSS + vanilla JavaScript. No build step, no framework, no database
 - `build.py` — the generator that built `site/` from the templates in this file. Re-run `python3 build.py` after editing templates.
 - `CONTENT-CHECKLIST.md`, `KEYWORDS.md` — launch checklists.
 
-## IMPORTANT — before launch: fill the tariff rates
-Every rate in `site/data/tariffs.json` is currently `"VERIFY_RATE"` on purpose.
+## Tariff status (2026-11-01)
+Domestic electricity base rates for all DISCOs + K-Electric are filled from NEPRA S.R.O. 279(I)/2026 (IESCO Tariff Guide, checked 2026-11-01). Gas, water, solar and each month's FPA / quarterly adjustment remain `"VERIFY_RATE"` on purpose — do not invent them.
 No official number has been invented. Until you fill them, company calculators
 show the slab structure and **no total** — that is intentional.
 

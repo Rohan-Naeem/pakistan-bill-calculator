@@ -28,8 +28,12 @@
       var rate = isNum(s.rate) ? fmt(s.rate) + ' / ' + esc(s.unit || '') : '<strong>VERIFY_RATE</strong>';
       return '<tr><td>' + esc(s.from) + ' – ' + esc(to) + '</td><td>' + rate + '</td></tr>';
     }).join('');
+    var fixedTxt = cat.slabs.map(function(s){ return isNum(s.fixed_per_kw) ? fmt(s.fixed_per_kw) + '/kW' : ''; }).filter(function(x){ return x; }).join(', ');
+    if(!fixedTxt) fixedTxt = isNum(cat.fixed_charge) ? fmt(cat.fixed_charge) : '<strong>VERIFY_RATE</strong>';
+    var modeTxt = cat.slabs[0] && cat.slabs[0].mode === 'flat_band' ? 'Billing: all units at the rate of the band your total falls in.' : 'Billing: units split across slabs in order.';
     slabBox.innerHTML = '<h3>Current tariff slabs — ' + esc(cat.label) + '</h3><table><tr><th>Units</th><th>Rate</th></tr>' + rows + '</table>'
-      + '<p class="mut">Fixed charge: ' + (isNum(cat.fixed_charge) ? fmt(cat.fixed_charge) : '<strong>VERIFY_RATE</strong>')
+      + '<p class="mut">Fixed charge: ' + fixedTxt
+      + ' &nbsp;|&nbsp; ' + modeTxt
       + ' &nbsp;|&nbsp; Last updated: ' + esc(TARIFF.last_updated) + ' &nbsp;|&nbsp; Source: ' + esc(TARIFF.source) + '</p>';
   }
   function calculate(ev){
@@ -47,7 +51,7 @@
     var key = categoryKey();
     var cat = TARIFF.categories[key];
     if(!cat){ out.innerHTML = '<p>No tariff category found for this selection yet. Please update tariffs.json.</p>'; return; }
-    var unverified = cat.slabs.some(function(s){ return !isNum(s.rate); }) || !isNum(cat.fixed_charge);
+    var unverified = cat.slabs.some(function(s){ return !isNum(s.rate); }) || !(cat.slabs.some(function(s){ return isNum(s.fixed_per_kw); }) || isNum(cat.fixed_charge));
     var rows = [], total = 0, remaining = units;
     if(hasCustom){
       var cost = units * custom;
@@ -71,20 +75,43 @@
         + '<p class="mut">Estimated bill label: <strong>Pending verification</strong>. The final bill always depends on the company’s official billing.</p>';
       bindActions(null); return;
     }
-    // Verified path: slab-wise calculation, then charges line by line.
-    // Slab ranges are inclusive-style (0-50, 51-100...), so each slab's width
-    // is its upper bound minus the previous slab's upper bound.
-    var prevUpper = 0;
+    // Verified path. Two billing modes, both from the official schedule:
+    // telescopic (protected domestic: split across slabs) and flat_band
+    // (non-protected domestic, commercial, industrial: ALL units at the
+    // rate of the band the month's total falls in).
+    var band = cat.slabs[0];
     cat.slabs.forEach(function(s){
-      if(remaining <= 0) return;
-      var upper = (s.to === null || s.to === undefined) ? Infinity : s.to;
-      var take = isFinite(upper) ? Math.min(remaining, upper - prevUpper) : remaining;
-      if(isFinite(upper)) prevUpper = upper;
-      if(take <= 0) return;
-      var c = take * s.rate;
-      rows.push(['Slab ' + s.from + ' – ' + (isFinite(upper) ? upper : 'above') + ' (' + take + ' units)', c]);
-      total += c; remaining -= take;
+      var lo = s.from, hi = (s.to === null || s.to === undefined) ? Infinity : s.to;
+      if(units > 0 && units > lo - 1 && units <= hi) band = s;
     });
+    // Protected benefit ends above 200 units: bill at non-protected rates.
+    if(key === 'domestic_protected' && units > 200 && TARIFF.categories.domestic_non_protected){
+      cat = TARIFF.categories.domestic_non_protected;
+      band = cat.slabs[0];
+      cat.slabs.forEach(function(s){
+        var lo = s.from, hi = (s.to === null || s.to === undefined) ? Infinity : s.to;
+        if(units > lo - 1 && units <= hi) band = s;
+      });
+      rows.push(['Note: above 200 units, protected benefit ends — billed at non-protected rates', 0]);
+    }
+    if(cat.slabs[0] && cat.slabs[0].mode === 'flat_band'){
+      var ec = units * band.rate;
+      rows.push(['Slab ' + band.from + ' – ' + (band.to === null || band.to === undefined ? 'above' : band.to) + ' (' + units + ' units at ' + fmt(band.rate) + ')', ec]);
+      total += ec;
+    } else {
+      var prevUpper = 0;
+      cat.slabs.forEach(function(s){
+        if(remaining <= 0) return;
+        var upper = (s.to === null || s.to === undefined) ? Infinity : s.to;
+        var take = isFinite(upper) ? Math.min(remaining, upper - prevUpper) : remaining;
+        if(isFinite(upper)) prevUpper = upper;
+        if(take <= 0) return;
+        var c = take * s.rate;
+        rows.push(['Slab ' + s.from + ' – ' + (isFinite(upper) ? upper : 'above') + ' (' + take + ' units)', c]);
+        total += c; remaining -= take;
+      });
+    }
+
     // Solar: subtract export credit at the official export rate, if verified.
     var chSolar = TARIFF.charges || {};
     if(TARIFF.type === 'solar'){
@@ -96,11 +123,16 @@
         total -= credit;
       }
     }
-    if(isNum(cat.fixed_charge)){ rows.push(['Fixed charge', cat.fixed_charge]); total += cat.fixed_charge; }
+    var loadEl = document.getElementById('f-load');
+    var loadKw = loadEl ? parseFloat(loadEl.value) : NaN;
+    if(isNaN(loadKw) || loadKw <= 0) loadKw = 1;
+    if(band && isNum(band.fixed_per_kw)){ var fc = band.fixed_per_kw * loadKw; rows.push(['Fixed charge (' + fmt(band.fixed_per_kw) + '/kW × ' + loadKw + ' kW)', fc]); total += fc; }
+    else if(isNum(cat.fixed_charge)){ rows.push(['Fixed charge', cat.fixed_charge]); total += cat.fixed_charge; }
     var ch = TARIFF.charges || {};
     if(isNum(ch.fpa_per_unit)){ var f = units * ch.fpa_per_unit; rows.push(['Fuel Price Adjustment (FPA)', f]); total += f; }
     if(isNum(ch.quarterly_adjustment_per_unit)){ var q = units * ch.quarterly_adjustment_per_unit; rows.push(['Quarterly adjustment', q]); total += q; }
-    if(isNum(ch.tv_fee)){ rows.push(['TV fee', ch.tv_fee]); total += ch.tv_fee; }
+    var tvFee = (key === 'commercial' && isNum(ch.tv_fee_commercial)) ? ch.tv_fee_commercial : ch.tv_fee;
+    if(key !== 'industrial' && isNum(tvFee)){ rows.push(['TV fee', tvFee]); total += tvFee; }
     var beforeTax = total;
     if(isNum(ch.electricity_duty_percent)){ var d = beforeTax * ch.electricity_duty_percent / 100; rows.push(['Electricity duty (' + ch.electricity_duty_percent + '%)', d]); total += d; }
     if(isNum(ch.gst_percent)){ var g = beforeTax * ch.gst_percent / 100; rows.push(['GST (' + ch.gst_percent + '%)', g]); total += g; }
@@ -108,10 +140,11 @@
       var w = total > 0 ? Math.max(4, Math.round(r[1] / total * 100)) : 4;
       return '<div class="bar-row"><span style="min-width:170px">' + esc(r[0]) + '</span><span class="bar" style="width:' + w + '%"></span><span>' + fmt(r[1]) + '</span></div>';
     }).join('');
+    var excl = (TARIFF.charges && !isNum(TARIFF.charges.fpa_per_unit)) ? ' Excludes that month’s FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month.' : '';
     out.innerHTML = '<p class="total">Estimated bill: ' + fmt(total) + '</p>'
       + '<table><tr><th>Item</th><th>Amount</th></tr>' + rows.map(function(r){ return '<tr><td>'+esc(r[0])+'</td><td>'+fmt(r[1])+'</td></tr>'; }).join('') + '</table>'
       + '<h3>Where the money goes</h3>' + chart
-      + '<p class="mut">Estimated bill only. The final bill depends on the company’s official billing, meter reading, arrears and any adjustments not shown here.</p>';
+      + '<p class="mut">Estimated bill only, from the base tariff + fixed charge + duty + GST + TV fee where shown.' + excl + ' The final bill depends on the company’s official billing, meter reading and arrears.</p>';
     bindActions(total);
   }
   function bindActions(total){

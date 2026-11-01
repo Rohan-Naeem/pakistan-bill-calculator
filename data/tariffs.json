@@ -3,7 +3,7 @@
     "site": "Pakistan Bill Calculator",
     "currency": "PKR",
     "last_updated": "2026-10-29",
-    "status": "RATES_PENDING_VERIFICATION",
+    "status": "DOMESTIC_ELECTRICITY_BASE_VERIFIED_GAS_WATER_SOLAR_PENDING",
     "warning": "Every rate marked VERIFY_RATE must be replaced with the current official rate from NEPRA, OGRA or the company before this site is used for real estimates. Do not publish a numeric total as official while any rate is still VERIFY_RATE.",
     "how_to_update": "Open data/tariffs.json, find the company, replace each VERIFY_RATE with a number (PKR), update last_updated and source_url, then redeploy. The calculator reads this file, so no JavaScript change is needed."
   },
@@ -15,264 +15,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Lahore and nearby districts",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "https://www.lesco.gov.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/lescobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "fesco": {
@@ -282,264 +166,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Faisalabad region",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "http://fesco.com.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/fescobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "gepco": {
@@ -549,264 +317,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Gujranwala region",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "http://www.gepco.com.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/gepcobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "iesco": {
@@ -816,264 +468,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Islamabad and Rawalpindi region",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "https://www.iesco.com.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/iescobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "mepco": {
@@ -1083,264 +619,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Multan and South Punjab",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "http://www.mepco.com.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/mepcobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "pesco": {
@@ -1350,264 +770,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Peshawar and Khyber Pakhtunkhwa",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "https://pesco.com.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/pescobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "hesco": {
@@ -1617,264 +921,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Hyderabad region, Sindh",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "http://www.hesco.gov.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/hescobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "sepco": {
@@ -1884,264 +1072,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Sukkur region, Sindh",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "https://www.sepco.com.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/sepcobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "qesco": {
@@ -2151,264 +1223,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Quetta and Balochistan",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "https://www.qesco.com.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/qescobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "tesco": {
@@ -2418,264 +1374,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Merged tribal districts, Khyber Pakhtunkhwa",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "https://tesco.gov.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://bill.pitc.com.pk/tescobill",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "ke": {
@@ -2685,264 +1525,148 @@
       "type": "electricity",
       "unit": "kWh",
       "region": "Karachi and nearby areas",
-      "last_updated": "2026-10-29",
-      "status": "VERIFY_RATE",
-      "source": "NEPRA tariff determination and the company tariff schedule — verify the current SRO/notification.",
+      "last_updated": "2026-11-01",
+      "status": "DOMESTIC_BASE_VERIFIED",
+      "source": "NEPRA S.R.O. 279(I)/2026 (Feb 2026), uniform A-1/A-2/B1 schedule, as published in the IESCO Tariff Guide — checked 2026-11-01. Applies uniformly to XWDISCOs and K-Electric.",
       "source_url": "https://www.ke.com.pk",
+      "tariff_source_url": "https://iesco.com.pk/tariff-guide",
       "bill_check_url": "https://www.ke.com.pk/bills-e-payments",
       "categories": {
         "domestic_protected": {
-          "label": "Domestic — Protected",
+          "label": "Domestic — Protected (up to 200 units, telescopic)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 10.54,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 200,
+              "mode": "telescopic"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
-              "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 13.01,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "telescopic"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "domestic_non_protected": {
-          "label": "Domestic — Non-protected",
+          "label": "Domestic — Non-protected (all units at final band rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
               "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 22.44,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 275,
+              "mode": "flat_band"
             },
             {
               "from": 101,
               "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 28.91,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 300,
+              "mode": "flat_band"
             },
             {
               "from": 201,
               "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 33.1,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 350,
+              "mode": "flat_band"
             },
             {
               "from": 301,
               "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 36.46,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 400,
+              "mode": "flat_band"
             },
             {
               "from": 401,
               "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 38.95,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 500,
+              "mode": "flat_band"
             },
             {
               "from": 501,
               "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 40.22,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 601,
               "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 41.85,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             },
             {
               "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 47.2,
+              "unit": "PKR/kWh",
+              "fixed_per_kw": 675,
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": "PER_KW_SEE_SLAB"
         },
         "commercial": {
-          "label": "Commercial",
+          "label": "Commercial — up to 5 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 37.44,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         },
         "industrial": {
-          "label": "Industrial",
+          "label": "Industrial — B1 up to 25 kW (flat rate)",
           "slabs": [
             {
               "from": 0,
-              "to": 50,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 51,
-              "to": 100,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 101,
-              "to": 200,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 201,
-              "to": 300,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 301,
-              "to": 400,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 401,
-              "to": 500,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 501,
-              "to": 600,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 601,
-              "to": 700,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
-            },
-            {
-              "from": 701,
               "to": null,
-              "rate": "VERIFY_RATE",
-              "unit": "PKR/kWh"
+              "rate": 26.23,
+              "unit": "PKR/kWh",
+              "mode": "flat_band"
             }
           ],
-          "fixed_charge": "VERIFY_RATE"
+          "fixed_charge": 1000
         }
       },
       "charges": {
         "fpa_per_unit": "VERIFY_RATE",
         "quarterly_adjustment_per_unit": "VERIFY_RATE",
-        "electricity_duty_percent": "VERIFY_RATE",
-        "gst_percent": "VERIFY_RATE",
-        "tv_fee": "VERIFY_RATE",
-        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess."
+        "electricity_duty_percent": 1.5,
+        "gst_percent": 18,
+        "tv_fee": 35,
+        "tv_fee_commercial": 60,
+        "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
-        "Protected status usually depends on average consumption over the previous months — confirm the current rule from the official tariff before publishing.",
-        "Peak / off-peak (time-of-use) rates apply only to TOU consumers. If this company page is for a normal domestic consumer, leave TOU blank and use the standard slabs."
+        "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
+        "Non-protected: every unit is charged at the rate of the band the month's total falls in, not split telescopically. Protected: units are split across slabs in order.",
+        "Fixed charges for domestic are Rs/kW/month and depend on the band (Rs 200-675/kW). Enter your sanctioned load (kW) from your bill; the calculator defaults to 1 kW and labels it so.",
+        "Commercial shown is A-2 up to 5 kW (Rs 37.44, fixed Rs 1,000/month). Loads 5 kW and above use Rs 39.76 flat or TOU peak 43.82 / off-peak 35.15 with Rs 1,250/kW — not yet in this calculator. Industrial shown is B1 up to 25 kW only; larger / TOU industrial tariffs are not yet in this calculator.",
+        "Lifeline (up to 50 units at Rs 3.95, 51-100 at Rs 7.74, no fixed charge) is a separate sub-category inside the protected schedule and is not a separate calculator option yet — a lifeline bill will be lower than the protected estimate shown here."
       ]
     },
     "solar": {
@@ -2956,6 +1680,7 @@
       "status": "VERIFY_RATE",
       "source": "NEPRA net-metering regulations and the approved net-metering agreement — verify before publishing.",
       "source_url": "https://www.nepra.org.pk",
+      "tariff_source_url": "",
       "bill_check_url": "",
       "categories": {
         "domestic": {
@@ -3100,6 +1825,7 @@
       "status": "VERIFY_RATE",
       "source": "OGRA tariff notification and the company tariff schedule — verify the current notification.",
       "source_url": "https://www.sngpl.com.pk",
+      "tariff_source_url": "",
       "bill_check_url": "https://www.sngpl.com.pk",
       "categories": {
         "domestic_protected": {
@@ -3292,6 +2018,7 @@
       "status": "VERIFY_RATE",
       "source": "OGRA tariff notification and the company tariff schedule — verify the current notification.",
       "source_url": "https://www.ssgc.com.pk",
+      "tariff_source_url": "",
       "bill_check_url": "https://viewbill.ssgc.com.pk",
       "categories": {
         "domestic_protected": {
@@ -3484,6 +2211,7 @@
       "status": "VERIFY_RATE",
       "source": "The company tariff / board notification — verify before publishing.",
       "source_url": "https://wasa.punjab.gov.pk",
+      "tariff_source_url": "",
       "bill_check_url": "https://wasa.punjab.gov.pk",
       "categories": {
         "domestic": {
@@ -3531,6 +2259,7 @@
       "status": "VERIFY_RATE",
       "source": "The company tariff / board notification — verify before publishing.",
       "source_url": "https://kwsc.gos.pk",
+      "tariff_source_url": "",
       "bill_check_url": "https://kwsc.gos.pk",
       "categories": {
         "domestic": {
