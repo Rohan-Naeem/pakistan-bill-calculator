@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/lesco-bill",
+      "destination": "/electricity-bill-calculator/lesco-bill-calculator/",
+      "permanent": true
+    }
+  ]
+}
