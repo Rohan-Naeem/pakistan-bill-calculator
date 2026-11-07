@@ -164,8 +164,12 @@
     if(band && isNum(band.fixed_per_kw)){ var fc = band.fixed_per_kw * loadKw; rows.push(['Fixed charge (' + fmt(band.fixed_per_kw) + '/kW × ' + loadKw + ' kW)', fc]); total += fc; }
     else if(isNum(cat.fixed_charge)){ rows.push(['Fixed charge', cat.fixed_charge]); total += cat.fixed_charge; }
     var ch = TARIFF.charges || {};
-    if(isNum(ch.fpa_per_unit)){ var f = units * ch.fpa_per_unit; rows.push(['Fuel Price Adjustment (FPA)', f]); total += f; }
-    if(isNum(ch.quarterly_adjustment_per_unit)){ var q = units * ch.quarterly_adjustment_per_unit; rows.push(['Quarterly adjustment', q]); total += q; }
+    var fpaEl = document.getElementById('f-fpa'), qtaEl = document.getElementById('f-qta');
+    var fpaUser = fpaEl ? parseFloat(fpaEl.value) : NaN, qtaUser = qtaEl ? parseFloat(qtaEl.value) : NaN;
+    if(!isNaN(fpaUser)){ var f = units * fpaUser; rows.push(['Fuel Price Adjustment (FPA) — from your bill', f]); total += f; }
+    else if(isNum(ch.fpa_per_unit)){ var f2 = units * ch.fpa_per_unit; rows.push(['Fuel Price Adjustment (FPA)', f2]); total += f2; }
+    if(!isNaN(qtaUser)){ var q = units * qtaUser; rows.push(['Quarterly adjustment — from your bill', q]); total += q; }
+    else if(isNum(ch.quarterly_adjustment_per_unit)){ var q2 = units * ch.quarterly_adjustment_per_unit; rows.push(['Quarterly adjustment', q2]); total += q2; }
     var tvFee = (key === 'commercial' && isNum(ch.tv_fee_commercial)) ? ch.tv_fee_commercial : ch.tv_fee;
     if(key !== 'industrial' && isNum(tvFee)){ rows.push(['TV fee', tvFee]); total += tvFee; }
     var beforeTax = total;
@@ -175,7 +179,8 @@
       var w = total > 0 ? Math.max(4, Math.round(r[1] / total * 100)) : 4;
       return '<div class="bar-row"><span style="min-width:170px">' + esc(r[0]) + '</span><span class="bar" style="width:' + w + '%"></span><span>' + fmt(r[1]) + '</span></div>';
     }).join('');
-    var excl = (TARIFF.charges && !isNum(TARIFF.charges.fpa_per_unit)) ? ' Excludes that month’s FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month.' : '';
+    var userAdj = !isNaN(fpaUser) || !isNaN(qtaUser);
+    var excl = userAdj ? ' FPA and quarterly adjustment are as entered by you from your bill.' : ((TARIFF.charges && !isNum(TARIFF.charges.fpa_per_unit)) ? ' Excludes that month’s FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month.' : '');
     out.innerHTML = '<p class="total">Estimated bill: ' + fmt(total) + '</p>'
       + '<table><tr><th>Item</th><th>Amount</th></tr>' + rows.map(function(r){ return '<tr><td>'+esc(r[0])+'</td><td>'+fmt(r[1])+'</td></tr>'; }).join('') + '</table>'
       + '<h3>Where the money goes</h3>' + chart

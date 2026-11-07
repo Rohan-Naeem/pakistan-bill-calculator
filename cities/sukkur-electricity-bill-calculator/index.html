@@ -28,11 +28,11 @@
 
 <section class="card" aria-label="Calculator">
 <h2>SEPCO calculator</h2>
-<div class="notice"><strong>Base rates verified:</strong> domestic, commercial (up to 5 kW) and industrial (B1 up to 25 kW) base rates are from NEPRA S.R.O. 279(I)/2026, as published in the IESCO Tariff Guide (checked 2026-11-01). The total includes duty, GST and TV fee where shown, but <strong>excludes that month’s FPA and quarterly adjustment</strong>, which change monthly. You can still estimate using the optional “my own rate” field, taken from your own bill.</div>
+<div class="notice"><strong>Base rates verified:</strong> domestic, commercial (up to 5 kW) and industrial (B1 up to 25 kW) base rates are from NEPRA S.R.O. 279(I)/2026, as published in the IESCO Tariff Guide (checked 2026-11-01). The total includes duty, GST and TV fee where shown. Blank means the total <strong>excludes that month’s FPA and quarterly adjustment</strong>, which change monthly and are never hardcoded here — enter the rates from your bill in the optional FPA and quarterly adjustment fields below to include them. You can also estimate using the optional “my own rate” field, taken from your own bill.</div>
 <form id="calc-form" data-company="sepco">
 <label for="f-units">Units consumed (kWh)</label>
 <input id="f-units" type="number" min="0" step="any" inputmode="decimal" required placeholder="e.g. 250">
-<label for="f-load">Sanctioned load (kW) — from your bill, for the fixed charge (defaults to 1 kW)</label><input id="f-load" type="number" min="0" step="any" inputmode="decimal" value="1" placeholder="e.g. 1">
+<label for="f-load">Sanctioned load (kW) — from your bill, for the fixed charge (defaults to 1 kW)</label><input id="f-load" type="number" min="0" step="any" inputmode="decimal" value="1" placeholder="e.g. 1"><label for="f-fpa">Optional: Fuel Price Adjustment (FPA) for that month, Rs per unit — from your bill (leave blank to exclude it)</label><input id="f-fpa" type="number" step="any" inputmode="decimal" placeholder="Leave blank"><label for="f-qta">Optional: quarterly adjustment, Rs per unit — from your bill (leave blank to exclude it)</label><input id="f-qta" type="number" step="any" inputmode="decimal" placeholder="Leave blank">
 
 
 <label for="f-category">Consumer category</label>

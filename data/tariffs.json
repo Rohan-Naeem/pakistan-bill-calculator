@@ -149,7 +149,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -300,7 +300,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -451,7 +451,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -602,7 +602,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -753,7 +753,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -904,7 +904,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -1055,7 +1055,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -1206,7 +1206,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -1357,7 +1357,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -1508,7 +1508,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
@@ -1659,7 +1659,7 @@
         "tv_fee": 35,
         "tv_fee_commercial": 60,
         "income_tax_note": "Section 235 / further tax rules vary by consumer and bill history — fill from the official tariff note, do not guess.",
-        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment, arrears, surcharges and meter rent, which vary by month — compare with the official bill."
+        "charges_note": "Total shown includes base energy + fixed charge + electricity duty (1.5%) + GST (18%) + TV fee (Rs 35, domestic). It EXCLUDES that month's FPA and quarterly adjustment unless you enter them from your bill in the optional fields, and excludes arrears, surcharges and meter rent, which vary by month — compare with the official bill."
       },
       "notes": [
         "Protected = 200 units or less in each of the last 6 months (IESCO Tariff Guide, S.R.O. 279(I)/2026). A protected consumer using more than 200 units in a month is billed at non-protected rates — the calculator warns about this.",
